@@ -48,7 +48,7 @@
 /* ------------------------------ Reset ------------------------------ */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
@@ -157,11 +157,11 @@ section { position: relative; padding-block: clamp(72px, 11vw, 130px); }
 }
 .btn svg { width: 18px; height: 18px; }
 .btn-primary {
-  background: var(--grad);
+  background: linear-gradient(135deg, #2cc0e0 0%, #2f8fbe 100%);
   color: #fff;
-  box-shadow: 0 10px 34px -10px rgba(32, 164, 194, 0.6);
+  box-shadow: 0 10px 30px -8px rgba(45, 180, 220, 0.7);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 44px -10px rgba(32, 164, 194, 0.75); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 44px -10px rgba(45, 180, 220, 0.85); }
 .btn-ghost {
   background: var(--surface);
   border-color: var(--border-2);
@@ -571,7 +571,7 @@ section { position: relative; padding-block: clamp(72px, 11vw, 130px); }
   font-size: 0.82rem;
   transition: all 0.2s;
 }
-.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 .seg input:checked + span,
 .seg label:has(input:checked) { color: #fff; border-color: var(--teal); background: rgba(32,164,194,0.16); }
 .seg label:has(input:checked) { box-shadow: inset 0 0 0 1px var(--teal); }
@@ -612,8 +612,8 @@ section { position: relative; padding-block: clamp(72px, 11vw, 130px); }
 .cinfo:hover { border-color: var(--teal); transform: translateX(4px); }
 .cinfo .ico { width: 48px; height: 48px; border-radius: 12px; background: rgba(32,164,194,0.12); border: 1px solid rgba(32,164,194,0.3); display: grid; place-items: center; flex: none; }
 .cinfo .ico svg { width: 22px; height: 22px; color: var(--teal-bright); }
-.cinfo .label { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; color: var(--faint); }
-.cinfo .val { color: var(--text); font-size: 1.02rem; }
+.cinfo .label { display: block; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; color: var(--faint); margin-bottom: 3px; }
+.cinfo .val { display: block; color: var(--text); font-size: 1.02rem; line-height: 1.3; word-break: break-word; }
 .hours-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
 .hours-table td { padding: 11px 0; border-bottom: 1px solid var(--border); }
 .hours-table td:last-child { text-align: right; color: var(--text); font-family: var(--font-head); }
