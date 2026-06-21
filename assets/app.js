@@ -207,6 +207,8 @@
         if (dateOut && fd.get("datum")) dateOut.textContent = fd.get("datum");
         success.classList.add("show");
       }
+      // first-party analytics: booking request submitted (conversion intent)
+      if (typeof window.cc === "function") { try { window.cc("book_call"); } catch (e) {} }
       // Open the user's mail client with everything prefilled.
       window.setTimeout(function () { window.location.href = mailto; }, 350);
     });
